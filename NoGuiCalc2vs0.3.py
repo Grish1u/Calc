@@ -1,10 +1,11 @@
 # CREATOR : ALBERT - GRI
 # DATE : 4/9/2018
-# Version: 0.3
+# Version: 0.3A
 # New to this version: Error fixes
     # What was done: 
+    # Git tested 
     # Added new function is_number, and it is implemented in a way that works in the get_float_num() func
-print ("Simple Non-GUICalc vs 0.3 : Created by Gri\n-----------------------------")
+print ("Simple Non-GUICalc vs 0.3A : Created by Gri\n-----------------------------")
 
 # Globals
 operations_list = ['A', 'S', 'M', 'D']
