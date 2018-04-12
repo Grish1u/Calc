@@ -1,0 +1,2 @@
+-these versions are made in the old way
+-new version control will be managed with git

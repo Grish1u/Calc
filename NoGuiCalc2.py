@@ -1,19 +1,20 @@
 # CREATOR : ALBERT - GRI
 # DATE : 4/9/2018
-# Version: 0.3A
-# New to this version: Error fixes
+# Version: 0.4
+# Enlarged functionality - mainly made so I can test a new git commit and git push
     # What was done: 
-    # Git tested 
-    # Added new function is_number, and it is implemented in a way that works in the get_float_num() func
-print ("Simple Non-GUICalc vs 0.3A : Created by Gri\n-----------------------------")
+    # Git tested x2
+    # Now not only capital letter is recognised for operation choice:
+    # --- 1 - operation_list enlarged
+    # --- 2 - if statemment in the program flow has an or to make sure we user uppercase and lowercase letters
+print ("Simple Non-GUICalc vs 0.4 : Created by Gri\n-----------------------------")
 
 # Globals
-operations_list = ['A', 'S', 'M', 'D']
-c = True
+operations_list = ['A', 'a', 'S', 's', 'M', 'm', 'D', 'd'] # choice
+c = True # THIS ONE WE MIGHT NOT NEED
 
 
 # Funcs / Methods
-
 def addition(n1, n2):
     return(n1+n2)
 
@@ -56,25 +57,25 @@ while True:
     
             inp = input('A - Addition\nS - Substraction\nM - Multiplication\nD - Division\n------------\nType the letter and press enter: ')
     
-            if inp == operations_list[0]:
+            if inp == operations_list[0] or inp == operations_list[1]:
                 determine = False
                 print('Your choice is Addition\n')
                 num2 = get_float_num()
                 result = addition(num1, num2)
                 result_float_toStr_printer(result)
-            elif inp == operations_list[1]:
+            elif inp == operations_list[2] or inp == operations_list[3]:
                 determine = False
                 print('Your choice is Substraction\n')
                 num2 = get_float_num()
                 result = subtraction(num1, num2)
                 result_float_toStr_printer(result)
-            elif inp == operations_list[2]:
+            elif inp == operations_list[4] or inp == operations_list[5]:
                 determine = False
                 print('Your choice is Multiplication\n')
                 num2 = get_float_num()
                 result = multiplication(num1, num2)
                 result_float_toStr_printer(result)
-            elif inp == operations_list[3]:
+            elif inp == operations_list[6] or inp == operations_list[7]:
                 determine = False
                 print('Your choice is Division\n')
                 num2 = 0
@@ -90,7 +91,7 @@ while True:
                 determine = True
                 print("Your choice wasn't recognised\nPlease try again\n\n")
     elif calc_inp == 'N' or calc_inp == 'n' :
-        print('Thank you for using my calculator')
+        print('Thank you for using NoGuicCalc2')
         input('Enter to quit: ')
         break
     else:
@@ -98,7 +99,5 @@ while True:
 
 
 # TODO:1
-# - Try larger numbers, try signed and unsigned numbers
 # - Test each operation
-# - Massive chance for errors with the expected user input - to string, to int, to float etc.
-# - TESTING MUCH MORE TESTING
+# - Check whether we need the global variable 'c'
