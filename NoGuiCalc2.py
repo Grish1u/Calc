@@ -1,18 +1,17 @@
 # CREATOR : ALBERT - GRI
-# DATE : 4/9/2018
-# Version: 0.4
-# Enlarged functionality - mainly made so I can test a new git commit and git push
+# Release date : 4/9/2018
+# Last updated: 4/25/2018
+# Version: 0.5
+# Enlarged functionality
     # What was done: 
-    # Git tested x2
-    # Now not only capital letter is recognised for operation choice:
-    # --- 1 - operation_list enlarged
-    # --- 2 - if statemment in the program flow has an or to make sure we user uppercase and lowercase letters
-print ("Simple Non-GUICalc vs 0.4 : Created by Gri\n-----------------------------")
+    # Git tested x3
+    # Added a list to keep track of the history of calculations
+print ("Simple Non-GUICalc vs 0.5 : Created by Grishak\n-----------------------------")
 
 # Globals
 operations_list = ['A', 'a', 'S', 's', 'M', 'm', 'D', 'd'] # choice
 c = True # THIS ONE WE MIGHT NOT NEED
-
+results = [] # keeps track of the history of the results in the calculations
 
 # Funcs / Methods
 def addition(n1, n2):
@@ -62,18 +61,21 @@ while True:
                 print('Your choice is Addition\n')
                 num2 = get_float_num()
                 result = addition(num1, num2)
+                results.append(result)
                 result_float_toStr_printer(result)
             elif inp == operations_list[2] or inp == operations_list[3]:
                 determine = False
                 print('Your choice is Substraction\n')
                 num2 = get_float_num()
                 result = subtraction(num1, num2)
+                results.append(result)
                 result_float_toStr_printer(result)
             elif inp == operations_list[4] or inp == operations_list[5]:
                 determine = False
                 print('Your choice is Multiplication\n')
                 num2 = get_float_num()
                 result = multiplication(num1, num2)
+                results.append(result)
                 result_float_toStr_printer(result)
             elif inp == operations_list[6] or inp == operations_list[7]:
                 determine = False
@@ -86,11 +88,13 @@ while True:
                     else:
                         break
                 result = division(num1, num2)
+                results.append(result)
                 result_float_toStr_printer(result)
             else:
                 determine = True
                 print("Your choice wasn't recognised\nPlease try again\n\n")
     elif calc_inp == 'N' or calc_inp == 'n' :
+        print('Calculations history: ', str(results))
         print('Thank you for using NoGuicCalc2')
         input('Enter to quit: ')
         break
@@ -99,5 +103,4 @@ while True:
 
 
 # TODO:1
-# - Test each operation
 # - Check whether we need the global variable 'c'
